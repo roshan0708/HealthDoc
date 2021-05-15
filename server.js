@@ -1,25 +1,36 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const morgan = require('morgan');
-const path = require('path');
-
+const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8080;
-const connectDB = require("./config/db");
+const setHeaders = require("./utils/setHeaders");
+const bodyParser = require("./utils/bodyParser");
+const passport = require("passport");
+require("./passport")(passport);
 
-// connecting to Mongo Atlas
-connectDB();
+// set headers to avoid CORS Policy
+app.use(setHeaders);
+// parser the body of the request
+app.use(express.json());
+app.use(bodyParser);
 
-// HTTP request logger
-app.use(morgan('tiny'));
+// initialize passport
+app.use(passport.initialize());
 
-app.get('/api',(req,res) => {
-    const data = {
-        username: 'roshan',
-        age: 20
-    };
+// testing path
+app.get("/api", (req, res) => {
+  const data = {
+    username: "roshan",
+    age: 20,
+  };
 
-    res.json(data);
-})
+  res.json(data);
+});
 
-app.listen(PORT, console.log(`Server is running at Port: ${PORT}`));
+// error handling
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({ error: err });
+});
+
+// setting routers
+require("./routes/index")(app);
+
+module.exports = app;

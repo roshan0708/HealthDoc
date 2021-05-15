@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const saltRounds = process.env.SALT_ROUNDS;
 
 const UserSchema = new mongoose.Schema({
   firstName: {
@@ -28,6 +30,14 @@ const UserSchema = new mongoose.Schema({
       ref: "appointments",
     },
   ],
+});
+
+// hashing password
+UserSchema.pre("save", async function (next) {
+  const user = this;
+  const hash = await bcrypt.hash(user.password, saltRounds);
+  user.password = hash;
+  next();
 });
 
 module.exports = User = mongoose.model("user", UserSchema);

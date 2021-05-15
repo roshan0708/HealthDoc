@@ -2,21 +2,27 @@
   "name": "predict-med",
   "version": "1.0.0",
   "author": "Roshan Kanwar <rkanwar0708@gmail.com>",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "start_local": "nodemon -r dotenv/config server.js",
+    "start": "node index.js",
+    "start_local": "nodemon -r dotenv/config index.js",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"yarn client\""
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon index.js\" \"yarn client\""
   },
   "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^5.0.1",
     "concurrently": "^6.1.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "mongoose": "^5.12.9",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "dotenv": "^9.0.2",
