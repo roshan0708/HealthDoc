@@ -5,7 +5,10 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+const connectDB = require("./config/db");
 
+// connecting to Mongo Atlas
+connectDB();
 
 // HTTP request logger
 app.use(morgan('tiny'));
