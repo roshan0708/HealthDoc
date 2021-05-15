@@ -5,7 +5,7 @@ const Appointment = require("../models/Appointment");
 const jwt_decode = require("jwt-decode");
 
 // book appointment route
-router.post("/appointment", (req, res) => {
+router.post("/api/appointment", (req, res) => {
   if (
     req.headers.authorization &&
     req.headers.authorization.split(" ")[0] === "Bearer"
@@ -52,7 +52,7 @@ router.post("/appointment", (req, res) => {
   }
 });
 
-router.get("/appointment", async (req, res) => {
+router.get("/api/appointment", async (req, res) => {
   if (
     req.headers.authorization &&
     req.headers.authorization.split(" ")[0] === "Bearer"
