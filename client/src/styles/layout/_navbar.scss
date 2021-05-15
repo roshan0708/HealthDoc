@@ -7,6 +7,10 @@
         color: black;
         font-size: xx-large;
         transition: all 0.5s ease;
+        &:hover{
+            color: #006aff !important;
+            transition: color 0.3s ease;
+        }
         p {
             font-weight: 800;
             font-family: 'Playfair Display', serif;
@@ -62,10 +66,6 @@
     .nav-link{
         &:hover{
             background-color: rgba(0,0,0,0.1);
-            transition: all 0.5s ease;
-        }
-        &:nth-last-child(1):hover{
-            background-color: white !important;
             transition: all 0.5s ease;
         }
     }

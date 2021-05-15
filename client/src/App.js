@@ -8,6 +8,7 @@ import setAuthToken from "./utils/setAuthToken";
 import Header from "./components/common/navbar";
 import Footer from "./components/common/footer";
 import Home from "./pages/Home";
+import Register from "./pages/Register";
 import Heart from "./pages/Heart";
 import Predict from "./pages/Predict";
 import Liver from "./pages/Liver";
@@ -33,12 +34,13 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/auth" component={Register} />
         <Route exact path="/predict" component={Predict} />
         <Route exact path="/predict/heart" component={Heart} />
         <Route exact path="/predict/liver" component={Liver} />
         <Route exact path="/predict/kidney" component={Kidney} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
       <ToastContainer
         position="top-right"
         autoClose={4000}

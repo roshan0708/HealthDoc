@@ -8,7 +8,7 @@ const Header = () => {
   let location = useLocation();
   const changeBackground = () => {
     let header = document.querySelector(".header-nav");
-    if (window.scrollY < 200 && location.pathname !== "/predict") {
+    if (window.scrollY < 200) {
       header.classList.remove("sticky");
     } else {
       header.classList.add("sticky");
@@ -39,6 +39,9 @@ const Header = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ms-auto me-5">
+          <NavLink className="px-3 nav-link" to="/">
+            <Fade>Home</Fade>
+          </NavLink>
           {location.pathname === "/" && (
             <>
               <Nav.Link className="px-3" href="#about">
@@ -49,8 +52,8 @@ const Header = () => {
               </Nav.Link>
             </>
           )}
-          <NavLink className="px-3 nav-link" to="/">
-            <Fade>Predict Now</Fade>
+          <NavLink className="px-3 nav-link" to="/auth">
+            <Fade>Register / Login</Fade>
           </NavLink>
         </Nav>
       </Navbar.Collapse>
