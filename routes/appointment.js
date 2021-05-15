@@ -52,4 +52,16 @@ router.post("/appointment", (req, res) => {
   }
 });
 
+router.get("/appointment", async (req, res) => {
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.split(" ")[0] === "Bearer"
+  ) {
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt_decode(token);
+    const user = await User.findById(decoded.sub).populate("appointments");
+    return res.status(200).json(user.appointments);
+  }
+});
+
 module.exports = router;

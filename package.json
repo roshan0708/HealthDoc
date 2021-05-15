@@ -2,12 +2,12 @@
   "name": "predict-med",
   "version": "1.0.0",
   "author": "Roshan Kanwar <rkanwar0708@gmail.com>",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "start_local": "nodemon -r dotenv/config index.js",
+    "start": "node server.js",
+    "start_local": "nodemon -r dotenv/config server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon index.js\" \"yarn client\""
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"yarn client\""
   },
   "license": "MIT",
   "dependencies": {
