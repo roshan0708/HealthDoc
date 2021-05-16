@@ -114,7 +114,7 @@ Follow these simple steps to run the project locally:
 2. Create a `.env` file in the root directory of the project. Add environment-specific variables on new lines in the form of `NAME=VALUE` by following same structure as provided in `env.example` file
 
    ```dosini
-    MONGO_URI=mongodb+srv://<username>:<password>@cluster0.cqdyk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+    MONGO_URI=mongouri_here
     JWT_SECRET=jwtSecretkey
     SALT_ROUNDS=number_here
     EXPIRES_IN=jwtexpirytime
