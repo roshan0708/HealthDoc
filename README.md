@@ -1,14 +1,11 @@
 <p align="center">
-  <img src="https://image.freepik.com/free-vector/medical-video-call-consultation-illustration_88138-415.jpg" alt="Sublime's custom image"/>
-  <h1>Project HealthDoc</h1>
+  <img src="https://user-images.githubusercontent.com/60403638/118405967-e7c9a180-b697-11eb-9220-c7e534c4afe0.png" alt="Sublime's custom image"/>
+  <h1 align="center">Project HealthDoc</h1>
   <p align="center">
     Bridging the gap between Patients and Doctors 
     <br />
     <a href="https://healthdoc.herokuapp.com/"><strong>Visit the website »</strong></a>
   </p>
-
-  A one stop place to predict chronic diseases related to Heart, Liver, Kidney, etc. and also booking appointments directly if needed with authenticate doctors. Also providing list of common medicines.
-  It is very tedious to go through all the tests and pay doctors to check whether you have a disease or not. our app gives you a result with an accuracy of 90+ percent thus saving both time and money. Also with the covid 19 pandaemic going on its too risky to out for pathology /diagnostics test , so you can check it all at your hom sitting in your couch .
 </p>
 
 ## Table of Contents
@@ -32,29 +29,39 @@ The aim of **Project HealthDoc** is to make the interaction of patients and doct
 
 :page_facing_up: Doctor appointment booking (Future Endeavour)
 
-:pill: Generic drugs to brand name converter & recommendation system (Future Endeavour
+:pill: Generic drugs to brand name converter & recommendation system (Future Endeavour)
 
 
 ## Predictions
 
-We used Random Forest Regression to train our model  which predicts Heart and Liver Disease with accuracy of >90% for both.
+We used Random Forest Regression to train our models which predicts Heart and Liver Disease with accuracy of >90% for both.
 
 
 ## Built With
 
 <p float = "left">
-<img alt="Python" src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">
 
+<img alt="SCSS" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
 
-<img alt="Python" src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white" />
+<img alt="JS" src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">
 
-<img alt="Python" src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white" />
+<img alt="MUI" src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" />
 
-<img alt="Python" src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white" />
+<img alt="React" src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white" />
+
+<img alt="Redux" src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />
+
+<img alt="Nodejs" src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white" />
+
+<img alt="Express" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" />
+
+<img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white" />
 
 <img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" />
 
-<img alt="Python" src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white" />
+<img alt="Django" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+
+<img alt="Heroku" src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white" />
 
 </p>
 
