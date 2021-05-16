@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
+import Loader from "../components/common/loader";
 import { Button } from "react-bootstrap";
-import FormInput from "../components/common/formInput";
 import ModalComponent from "../components/common/modal";
 import Fade from "react-reveal/Fade";
+const FormInput = lazy(() => import("../components/common/formInput"));
 
 const Liver = () => {
   const [data, setData] = useState({
@@ -48,7 +49,7 @@ const Liver = () => {
   };
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <div className="disease-div" id="disease">
         <div className="head mx-5">
           <div className="head-div mx-auto main-div">
@@ -218,7 +219,7 @@ const Liver = () => {
           </section>
         </Fade>
       </div>
-    </>
+    </Suspense>
   );
 };
 

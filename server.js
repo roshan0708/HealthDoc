@@ -34,6 +34,10 @@ app.get("/api", (req, res) => {
   res.json(data);
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 // setting routers
 app.use(user);
 app.use(appointment);
@@ -43,6 +47,5 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.json({ error: err });
 });
-
 
 app.listen(PORT, console.log(`Server is running at Port: ${PORT}`));

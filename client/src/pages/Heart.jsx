@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
+import Loader from "../components/common/loader";
 import { Button } from "react-bootstrap";
-import FormInput from "../components/common/formInput";
 import ModalComponent from "../components/common/modal";
 import Fade from "react-reveal/Fade";
+const FormInput = lazy(() => import("../components/common/formInput"));
 
 const Heart = () => {
   const [data, setData] = useState({
@@ -49,6 +50,13 @@ const Heart = () => {
     });
   };
 
+  // let tem=func();
+  // if(tem===1){
+  //   setText("There is a probablity that you have this disease, please consult your doctor immediately.")
+  // } else {
+  //   setText("You're all healthy and you shouldn't worry about the possibility that you might be suffering of this disease");
+  // }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((prevState) => ({
@@ -58,7 +66,7 @@ const Heart = () => {
   };
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <div className="disease-div" id="disease">
         <div className="head mx-5">
           <div className="head-div mx-auto main-div">
@@ -277,7 +285,7 @@ const Heart = () => {
           </section>
         </Fade>
       </div>
-    </>
+    </Suspense>
   );
 };
 

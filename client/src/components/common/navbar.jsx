@@ -1,10 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 import { Nav, Navbar } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
+import { logoutUser } from "../../redux/user/actions";
 import Fade from "react-reveal/Fade";
 import BrandLogo from "../../assets/healthcare.svg";
 
-const Header = () => {
+const Header = ({ logoutUser }) => {
+  const user = useSelector((state) => state.user);
   let location = useLocation();
   const changeBackground = () => {
     let header = document.querySelector(".header-nav");
@@ -52,13 +57,33 @@ const Header = () => {
               </Nav.Link>
             </>
           )}
-          <NavLink className="px-3 nav-link" to="/auth">
-            <Fade>Register / Login</Fade>
-          </NavLink>
+          {user.token === null && (
+            <NavLink className="px-3 nav-link" to="/auth">
+              <Fade>Register / Login</Fade>
+            </NavLink>
+          )}
+          {user.token && (
+            <>
+              <NavLink className="px-3 nav-link" to="/predict">
+                <Fade>Predict</Fade>
+              </NavLink>
+              <p
+                className="px-3 nav-link"
+                style={{ cursor: "pointer" }}
+                onClick={logoutUser}
+              >
+                <Fade>Log Out</Fade>
+              </p>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
-export default Header;
+Header.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+};
+
+export default connect(null, { logoutUser })(Header);

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux';
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Img from "../../assets/about_bg.png";
@@ -7,6 +8,8 @@ import BannerImg2 from "../../assets/banner_img_2.svg";
 import Fade from "react-reveal/Fade";
 
 const About = () => {
+  
+  const user = useSelector((state) => state.user);
 
   return (
     <div className="main-div" id="about" style={{ padding: "70px" }}>
@@ -31,14 +34,25 @@ const About = () => {
               <div className="text my-3">
                 Worried about the possibility of a chronic disease?
               </div>
-              <Link
-                className="button btn btn-primary"
-                variant="primary"
-                to="/auth"
-              >
-                {" "}
-                Register now
-              </Link>
+              {!user.token ? (
+                <Link
+                  className="button btn btn-primary"
+                  variant="primary"
+                  to="/auth"
+                >
+                  {" "}
+                  Register now
+                </Link>
+              ) : (
+                <Link
+                  className="button btn btn-primary"
+                  variant="primary"
+                  to="/predict"
+                >
+                  {" "}
+                  Predict now
+                </Link>
+              )}
               <div className="banner_item">
                 <div className="single_item">
                   <img src={BannerImg1} alt="" />
