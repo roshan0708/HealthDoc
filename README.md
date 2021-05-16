@@ -16,10 +16,12 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
+* [Future Updates](#future-updates)
 
 
 ## About The Project
+
+<img src="https://user-images.githubusercontent.com/60403638/118406404-93272600-b699-11eb-8609-3e222af021b1.png" alt="project_img" />
 
 The aim of **Project HealthDoc** is to make the interaction of patients and doctors **seamless**, **convenient** and **more organized**. This platform is built keeping in mind the problems and hassles one has to face while using any medical facility via hospitals.
 
@@ -65,4 +67,75 @@ We used Random Forest Regression to train our models which predicts Heart and Li
 
 </p>
 
+## Getting Started
 
+Follow these simple steps to run the project locally:
+
+### Prerequisites
+
+- Node.js
+- Python 3.8+
+- Yarn (we have used yarn for this project)
+
+### Installation
+
+#### Django API
+
+1. Clone the repo
+
+   ```
+   git clone https://github.com/roshan0708/HealthDoc
+   ```
+   
+2. Install requirements
+
+   ```
+   cd DjangoAPI
+   pip3 install -r requirements.txt
+   ```
+   
+3. Start the server (by default it listens to `http://127.0.0.1:8000/`)
+
+   ```
+   python manage.py runserver
+   ```
+
+#### React + Node
+
+1. Install React and Node modules
+
+   ```
+   cd ..   (only if not in root directory)
+   yarn install
+   cd client
+   yarn install
+   ```
+   
+2. Create a `.env` file in the root directory of the project. Add environment-specific variables on new lines in the form of `NAME=VALUE` by following same structure as provided in `env.example` file
+
+   ```dosini
+    MONGO_URI=mongodb+srv://<username>:<password>@cluster0.cqdyk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+    JWT_SECRET=jwtSecretkey
+    SALT_ROUNDS=number_here
+    EXPIRES_IN=jwtexpirytime
+
+    # wrap SALT_ROUNDS inside Number() when using like this Number(SALT_ROUNDS)
+   ```
+
+3. Run the following command in the root directory to start the project
+
+   ```
+   yarn develop
+   ```
+   
+🤩Viola! Project starts running at `localhost:5000`
+
+## Future Updates
+
+- Appointment System
+- Generic Medicine Name List
+- More models for disease prediction
+- Improve UI/UX overall
+- Enable PWA
+
+And More! There's always room for improvement!
