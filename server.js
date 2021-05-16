@@ -9,11 +9,18 @@ const setHeaders = require("./utils/setHeaders");
 const user = require("./routes/user");
 const appointment = require("./routes/appointment");
 
+// passport
+const passport = require("passport");
+require("./utils/passport")(passport);
+
 // set headers to avoid CORS Policy
 app.use(setHeaders);
 
 // parser the body of the request
 app.use(express.json());
+
+// initialize passport
+app.use(passport.initialize());
 
 // connecting to Mongo Atlas
 connectDB();
