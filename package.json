@@ -4,19 +4,20 @@
   "author": "Roshan Kanwar <rkanwar0708@gmail.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node -r dotenv/config server.js",
     "build": "cd client && yarn build",
     "install-client": "cd client && yarn install",
     "heroku-postbuild": "yarn install-client && yarn build",
-    "start_local": "nodemon -r dotenv/config server.js",
+    "server": "node -r dotenv/config server.js",
     "client": "cd client && yarn start",
-    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon -r dotenv/config server.js\" \"yarn client\""
+    "develop": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "yarn server"
   },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "concurrently": "^6.1.0",
     "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-validator": "^6.11.1",
     "jsonwebtoken": "^8.5.1",
@@ -28,7 +29,6 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "dotenv": "^9.0.2",
     "nodemon": "^2.0.7"
   }
 }

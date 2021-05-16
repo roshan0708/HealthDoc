@@ -1,4 +1,5 @@
 import React, { useState, lazy, Suspense } from "react";
+import axios from "axios";
 import Loader from "../components/common/loader";
 import { Button } from "react-bootstrap";
 import ModalComponent from "../components/common/modal";
@@ -28,11 +29,11 @@ const Heart = () => {
 
   const handleSubmit = (e) => {
     setLoading(true);
-    setTimeout(function () {
-      setLoading(false);
-      setModalShow(true);
-    }, 4000);
     e.preventDefault();
+    axios
+      .post("https://healthdoc-api.herokuapp.com/predictHeart", data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
     setData({
       age: "",
       sex: "",
@@ -48,6 +49,7 @@ const Heart = () => {
       ca: "",
       thal: "",
     });
+    setLoading(false);
   };
 
   // let tem=func();

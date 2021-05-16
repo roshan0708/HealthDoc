@@ -7,7 +7,7 @@ import { UserActionTypes } from "./types";
 // Register User
 export const registerUser = (userData, callback) => (dispatch) => {
   axios
-    .post("http://localhost:8080/api/register", userData)
+    .post("/api/register", userData)
     .then((res) => {
       dispatch(registerSuccess());
       callback();
@@ -38,7 +38,7 @@ export const registerUser = (userData, callback) => (dispatch) => {
 // Login - get user token
 export const loginUser = (userData, callback) => (dispatch) => {
   axios
-    .post("http://localhost:8080/api/login", userData)
+    .post("/api/login", userData)
     .then((res) => {
       // Save to localStorage
       // Set token to localStorage
