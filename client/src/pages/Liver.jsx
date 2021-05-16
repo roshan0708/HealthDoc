@@ -1,4 +1,5 @@
 import React, { useState, lazy, Suspense } from "react";
+import axios from 'axios';
 import Loader from "../components/common/loader";
 import { Button } from "react-bootstrap";
 import ModalComponent from "../components/common/modal";
@@ -23,10 +24,27 @@ const Liver = () => {
 
   const handleSubmit = (e) => {
     setLoading(true);
-    setTimeout(function () {
-      setLoading(false);
-      setModalShow(true);
-    }, 4000);
+    axios
+      .post("http://127.0.0.1:8000/predictLiver", data)
+      .then((res) => {
+        if (res.data.score === 0.0) {
+          setText(
+            "You're all healthy and you shouldn't worry about the possibility that you might be suffering of this disease"
+          );
+        } else {
+          setText(
+            "There is a probablity that you have this disease, please consult your doctor immediately."
+          );
+        }
+
+        setModalShow(true);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+
+        setLoading(false);
+      });
     setData({
       age: "",
       total_bilirubin: "",

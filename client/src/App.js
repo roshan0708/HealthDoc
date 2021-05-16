@@ -42,8 +42,8 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/auth" component={Register} />
           <PrivateRoute exact path="/predict" component={Predict} />
-          <PrivateRoute exact path="/predict/heart" component={Heart} />
-          <PrivateRoute exact path="/predict/liver" component={Liver} />
+          <Route exact path="/predict/heart" component={Heart} />
+          <Route exact path="/predict/liver" component={Liver} />
           <PrivateRoute exact path="/predict/kidney" component={Kidney} />
         </Switch>
       </Suspense>

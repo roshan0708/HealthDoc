@@ -12,6 +12,10 @@
     "develop": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "yarn server"
   },
+  "engines": {
+    "node": "14.15.1",
+    "yarn": "^1.22.4"
+  },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",

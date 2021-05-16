@@ -31,9 +31,26 @@ const Heart = () => {
     setLoading(true);
     e.preventDefault();
     axios
-      .post("https://healthdoc-api.herokuapp.com/predictHeart", data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .post("http://127.0.0.1:8000/predictHeart", data)
+      .then((res) => {
+        if (res.data.score === 0.0) {
+          setText(
+            "You're all healthy and you shouldn't worry about the possibility that you might be suffering of this disease"
+          );
+        } else {
+          setText(
+            "There is a probablity that you have this disease, please consult your doctor immediately."
+          );
+        }
+
+        setModalShow(true);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+
+        setLoading(false);
+      });
     setData({
       age: "",
       sex: "",
@@ -49,15 +66,7 @@ const Heart = () => {
       ca: "",
       thal: "",
     });
-    setLoading(false);
   };
-
-  // let tem=func();
-  // if(tem===1){
-  //   setText("There is a probablity that you have this disease, please consult your doctor immediately.")
-  // } else {
-  //   setText("You're all healthy and you shouldn't worry about the possibility that you might be suffering of this disease");
-  // }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
