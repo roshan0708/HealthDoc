@@ -4,10 +4,13 @@
   "author": "Roshan Kanwar <rkanwar0708@gmail.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node -r dotenv/config server.js",
+    "build": "cd client && yarn build",
+    "install-client": "cd client && yarn install",
+    "heroku-postbuild": "yarn install-client && yarn build",
     "start_local": "nodemon -r dotenv/config server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"yarn client\""
+    "client": "cd client && yarn start",
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon -r dotenv/config server.js\" \"yarn client\""
   },
   "license": "MIT",
   "dependencies": {

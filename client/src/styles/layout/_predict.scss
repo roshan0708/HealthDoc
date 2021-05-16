@@ -1,0 +1,56 @@
+.predict-div{
+    background: url("../../assets/background/blue_pattern_bg.jpg");
+    ;background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    .head{
+        font-family: 'ABeeZee', sans-serif;
+        color:black;
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        right: 0px;
+        transform: translateY(-50%);
+        z-index: 1;
+        line-height: 0.1vh;
+        min-height: 100vh;
+        display: flex;
+        &-div{
+            &-second-text,&-third-text{
+                font-family: 'Playfair Display', serif !important;
+                font-size: 50px;
+                padding: 0 !important;
+            }
+            &-fourth-text{
+                max-width: 500px;
+                font-size: 20px;
+                margin:10px 0 0;
+                line-height: 1.5;
+                white-space: pre-wrap;
+                padding-left: 5px;
+            }
+        }
+        form{
+            label{
+                line-height: 1.4;
+                font-size: 18px;
+                white-space: pre-wrap;
+                padding-left: 8px;
+            }
+            .button{
+                color:#006aff;
+                border-color: #006aff;
+                transition: all 0.5s ease;
+                &:hover,&:focus,&:active{
+                    outline:none !important;
+                    box-shadow: none !important;
+                    background-color: #006aff !important;
+                    color:#fff !important;
+                    border-color: #fff !important;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+}
