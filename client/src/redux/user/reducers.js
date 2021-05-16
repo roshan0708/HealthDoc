@@ -30,7 +30,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case UserActionTypes.LOGIN_SUCCESS:
       return {
         ...state,
-        isAuthenticated: true,
+        isAuthenticated: action.payload.token !== null,
         token: action.payload.token,
         currentUser: action.payload.data,
         loginPending: false,

@@ -31,7 +31,7 @@ const Heart = () => {
     setLoading(true);
     e.preventDefault();
     axios
-      .post("http://127.0.0.1:8000/predictHeart", data)
+      .post("https://healthdoc-api.herokuapp.com/predictHeart", data)
       .then((res) => {
         if (res.data.score === 0.0) {
           setText(

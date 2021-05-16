@@ -181,9 +181,6 @@ const Content = ({ loginUser, loginStart, registerUser, registerStart }) => {
                           </form>
                         </Card.Body>
                       </Card>
-                      <p className="testing mt-5">
-                        *<i>Use test@test.com and qwerty123 for testing</i>
-                      </p>
                     </div>
                   </section>
                 </Col>

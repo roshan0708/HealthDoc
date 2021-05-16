@@ -13,6 +13,13 @@
     }
 }
 
+@media only screen and (min-width:800px) and (max-width:1025px){
+    #root .header-nav{
+      padding-right: 40px !important;
+      padding-left: 40px !important;
+    }
+}
+
 @media only screen and (min-width:431px) and (max-width:770px){
    #root .group .form-input-label{
     font-size: small !important;
@@ -20,6 +27,14 @@
 }
 
 @media only screen and (max-width:430px){
+  .btn {
+    width: fit-content !important;
+  }
+
+  .register form {
+    padding: 20px !important;
+  }
+
   .bg-div .head-div-second-text, .bg-div .head-div-third-text,h1,h2{
     font-size: xx-large !important;
     padding-left: 5px !important;

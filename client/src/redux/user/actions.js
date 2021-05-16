@@ -64,6 +64,7 @@ export const loginUser = (userData, callback) => (dispatch) => {
     })
     .catch((err) => {
       callback();
+      dispatch(loginSuccess({ token: null, data : null}));
       toast.error(err.response.data.message.msgBody + " 🤥", {
         position: "top-right",
         autoClose: 3000,
