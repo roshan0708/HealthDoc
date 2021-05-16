@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import "~bootstrap/scss/bootstrap";
 
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track { 
+  border-radius: 3px;
+  background-color: #cdf1f5;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #292d2d; 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5959; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -103,3 +130,4 @@ li {
 @import "./layout/content";
 @import "./layout/predict";
 @import "./layout/disease";
+@import "./layout/formInput";

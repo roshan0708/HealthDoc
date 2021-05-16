@@ -40,7 +40,7 @@ const App = () => {
         <Route exact path="/predict/liver" component={Liver} />
         <Route exact path="/predict/kidney" component={Kidney} />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
       <ToastContainer
         position="top-right"
         autoClose={4000}
