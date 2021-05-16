@@ -1,7 +1,8 @@
 import React from "react";
+import PredictHome from "../components/predict/home";
 
 const Predict = () => {
-  return <div>Predict Page</div>;
+  return <PredictHome />;
 };
 
 export default Predict;
