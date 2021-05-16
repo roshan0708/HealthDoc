@@ -1,17 +1,12 @@
 import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Img from "../../assets/about_bg.png";
 import BannerImg1 from "../../assets/banner_img_1.svg";
 import BannerImg2 from "../../assets/banner_img_2.svg";
 import Fade from "react-reveal/Fade";
 
 const About = () => {
-  let history = useHistory();
-
-  const handleOnClick = () => {
-    history.push("/predict");
-  };
 
   return (
     <div className="main-div" id="about" style={{ padding: "70px" }}>
@@ -36,14 +31,14 @@ const About = () => {
               <div className="text my-3">
                 Worried about the possibility of a chronic disease?
               </div>
-              <Button
-                onClick={handleOnClick}
-                className="button"
+              <Link
+                className="button btn btn-primary"
                 variant="primary"
+                to="/auth"
               >
                 {" "}
                 Register now
-              </Button>
+              </Link>
               <div className="banner_item">
                 <div className="single_item">
                   <img src={BannerImg1} alt="" />

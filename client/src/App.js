@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { setCurrentUser } from "./redux/user/actions";
 import { ToastContainer } from "react-toastify";
 import jwt_decode from "jwt-decode";
@@ -29,6 +29,7 @@ if (localStorage.jwtToken) {
 }
 
 const App = () => {
+  let location = useLocation();
   return (
     <>
       <Header />
@@ -40,7 +41,10 @@ const App = () => {
         <Route exact path="/predict/liver" component={Liver} />
         <Route exact path="/predict/kidney" component={Kidney} />
       </Switch>
-      <Footer />
+      {location.pathname === "/predict" ? null : location
+          .pathname === "/auth" ? null : (
+        <Footer />
+      )}
       <ToastContainer
         position="top-right"
         autoClose={4000}

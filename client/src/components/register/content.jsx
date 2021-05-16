@@ -33,7 +33,7 @@ const Content = () => {
                     <div className="text-center" style={{ width: "50%" }}>
                       {" "}
                       <h2 className="mb-3">Register</h2>
-                      <Card style={{ width: "100%" }}>
+                      <Card style={{ width: "100%", height: "fit-content" }}>
                         <Card.Body>
                           <form className="d-flex flex-column">
                             <TextField label="First Name" />
@@ -49,7 +49,7 @@ const Content = () => {
                     </div>
                     <div className="text-center ps-3" style={{ width: "50%" }}>
                       <h2 className="mb-3">Log In</h2>
-                      <Card style={{ width: "100%" }}>
+                      <Card style={{ width: "100%", height: "fit-content" }}>
                         <Card.Body>
                           <form className="d-flex flex-column">
                             <TextField label="Email" />

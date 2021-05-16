@@ -1,0 +1,98 @@
+@media only screen and (max-width:700px){
+  .main-div{
+    padding:30px;
+  }
+}
+
+@media only screen and (max-width:800px){
+    #root .header-nav{
+      padding: 0 20px !important;
+    }
+    #root .header-nav,.navbar-collapse {
+      background-color: white !important;
+    }
+}
+
+@media only screen and (min-width:431px) and (max-width:770px){
+   #root .group .form-input-label{
+    font-size: small !important;
+  }
+}
+
+@media only screen and (max-width:430px){
+  .bg-div .head-div-second-text, .bg-div .head-div-third-text,h1,h2{
+    font-size: xx-large !important;
+    padding-left: 5px !important;
+  }
+  .bg-div .head-div-fourth-text{
+    font-size: medium;
+  }
+
+  .bg-div .social-media{
+    display: none;
+  }
+
+  #root .quote-div .main-div .quote .quote-text{
+    font-size: 22px  !important;
+  }
+  
+  #root p,span{
+    font-size: medium !important;
+  }
+
+  #root .group .form-input-label{
+    font-size: small !important;
+  }
+  
+  .heading{
+    font-size: xx-large !important;
+  }
+
+  .header-nav .brand-name,.header-nav .nav-link{
+    color:black !important;
+  }
+
+  .header-nav .nav-link{
+    width: 100%;
+    &:hover{
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+
+  #root .header-nav .brand-name{
+    margin-left:0 !important;
+  }
+
+  #root .header-nav .navbar-toggler-icon{
+    margin-bottom: 5px;
+    margin-right: 4px;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  #root .header-nav .navbar-toggler{
+    border-color: black;
+    background-color: unset;
+  }
+}
+
+
+@media only screen and (max-width:769px){
+    .card{
+        height:300px;
+    }
+    .header-nav{
+        .navbar-nav{
+            align-items: center;
+            margin-right: 0 !important;
+        }
+    }
+    .timeline .timeline-item .timeline-panel{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .bg-div {
+    background-attachment: scroll;
+  }
+}

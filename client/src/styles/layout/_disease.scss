@@ -1,5 +1,5 @@
 .disease-div{
-    background-attachment: fixed;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.442), rgba(255, 255, 255, 0.904)), url(../../assets/clean-medical-background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,18 +61,18 @@
 
 form{
     .button{
-        color:#000;
+        color:#006aff;
         padding:10px 50px;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
-        border-color: #000;
+        border-color: #006aff;
         transition: all 0.5s ease;
         &:hover,&:focus,&:active{
             outline:none !important;
             box-shadow: none !important;
-            background-color: #000 !important;
+            background-color: #006aff !important;
             color:#fff !important;
             border-color: #fff !important;
             transition: all 0.5s ease;
